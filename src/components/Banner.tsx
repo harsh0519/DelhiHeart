@@ -18,7 +18,6 @@ export const Banner = ({ images }: { images: any[] }) => {
           alt={`Slide ${index + 1}`}
           className="rounded-xl w-full object-cover"
         />
-        {/* Optional: next/prev buttons */}
       </div>
     </section>
   );
