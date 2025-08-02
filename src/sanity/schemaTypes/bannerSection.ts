@@ -1,13 +1,21 @@
-export default {
-  name: 'bannerSection',
-  type: 'document',
-  title: 'Banner Section',
-  fields: [
-    {
-      name: 'images',
-      title: 'Banner Images',
-      type: 'array',
-      of: [{ type: 'image' }],
-    },
-  ],
-}
+import { defineField, defineType } from "sanity";
+
+export const bannerType = defineType({
+	name: "banner",
+	title: "Banner",
+	type: "document",
+	fields: [
+		defineField({
+			name: "BannerImage",
+			type: "image",
+			options: { hotspot: true },
+			fields: [
+				{
+					name: "alt",
+					type: "string",
+					title: "Alternative Text",
+				},
+			],
+		}),
+	],
+});
