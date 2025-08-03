@@ -12,7 +12,7 @@ export const OfferCard = ({
   image: string;
   headline: string;
   subtext: string;
-  details: string[]; // now expecting an array of bullet points
+  details: string;
 }) => {
   const [flipped, setFlipped] = useState(false);
 
@@ -58,8 +58,7 @@ export const OfferCard = ({
           <button
             onClick={() => setFlipped(false)}
             className="mt-4 bg-black/70 text-white px-3 py-2 rounded-full hover:bg-black transition flex items-center gap-2 self-end text-sm"
-          >
-            <RotateCw size={16} className="transform rotate-180" />
+          ><RotateCw size={18} className="transform rotate-180" />
             Go to Code 
           </button>
 
