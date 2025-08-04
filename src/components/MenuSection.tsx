@@ -39,14 +39,12 @@ const MenuSection = ({ menuItems, categories }: MenuSectionProps) => {
 
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category)
-    setCurrentPage(1) // reset page on category change
+    setCurrentPage(1)
   }
 
   return (
     <section className="px-6 py-12 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-center">Explore Our Menu</h2>
-
-      {/* Category Filter */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         {allCategories.map(category => (
           <button
@@ -61,8 +59,6 @@ const MenuSection = ({ menuItems, categories }: MenuSectionProps) => {
           </button>
         ))}
       </div>
-
-      {/* Menu Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {paginatedItems.length > 0 ? (
           paginatedItems.map((item, idx) => (
@@ -70,7 +66,6 @@ const MenuSection = ({ menuItems, categories }: MenuSectionProps) => {
               key={idx}
               className="relative bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300"
             >
-              {/* Image with Tag Overlay */}
               <div className="relative">
                 <img
                   src={item.image}
@@ -83,8 +78,6 @@ const MenuSection = ({ menuItems, categories }: MenuSectionProps) => {
                   </span>
                 </div>
               </div>
-
-              {/* Details */}
               <div className="p-4 flex flex-col justify-between h-[180px]">
                 <h4 className="text-md font-semibold text-gray-800">{item.name}</h4>
                 <p className="text-sm text-gray-600 line-clamp-3">{item.description}</p>
@@ -112,8 +105,6 @@ const MenuSection = ({ menuItems, categories }: MenuSectionProps) => {
           <p className="text-gray-500 col-span-full text-center">No items found.</p>
         )}
       </div>
-
-      {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex justify-center mt-10 gap-2">
           {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
