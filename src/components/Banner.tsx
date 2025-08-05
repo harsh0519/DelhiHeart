@@ -11,11 +11,11 @@ export const Banner = ({ images }: { images: { image: string }[] }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false); // Start fade-out
+      setFade(false);
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % imageUrls.length);
-        setFade(true); // Fade-in new image
-      }, 300); // fade duration
+        setFade(true); 
+      }, 300); 
     }, 4000);
 
     return () => clearInterval(interval);
